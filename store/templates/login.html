@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div id="home" class="home-section">
+        <div class="home-content">
+            <h1>Login</h1>
+            <p>Login into your account.</p>
+        </div>
+    </div>
+
+    <div class="container-md-6">
+        <div class="row justify-content-center">
+        <div class="col-md-6">
+    <center>
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <br><br>
+            <div class="mb-3">
+                <input type="text" class="form-control" name="username" placeholder="Enter Your Username">
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" name="password" placeholder="Enter Your Password">
+            </div>
+            <button type="submit" class="btn btn-secondary">Login</button>
+        </form>
+        <br><br>
+    </center>
+</div>
+</div>
+</div>
+{% endblock %}

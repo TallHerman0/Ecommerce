@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block content %}
+
+<style>
+    .home-section {
+        background: url("{% static '/images/Image1.png' %}") rgba(0, 0, 0, 0.1) no-repeat center center;
+        background-size: cover;
+    }
+
+    .home-content p {
+    font-size: 1.8em;
+    max-width: 600px;
+    color: white;
+}
+</style>
+
+    <div id="home" class="home-section">
+        <div class="home-content">
+            <h1>Register</h1>
+            <p>Register for a user account.</p>
+        </div>
+    </div>
+
+    <div class="container-md-6">
+        <div class="row justify-content-center">
+        <div class="col-md-6">
+    <center>
+        <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            <br><br>
+            {{ form.as_p }}
+            <br>
+            <button type="submit" class="btn btn-secondary">Register</button>
+        </form>
+        <br><br>
+    </center>
+</div>
+</div>
+</div>
+{% endblock %}
